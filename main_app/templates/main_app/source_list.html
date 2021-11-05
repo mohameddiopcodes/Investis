@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Sources List</h1>
+
+{% for source in source_list %}
+  <a href="{% url 'source_detail' source.id %}">{{source.name}}</a>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Investment Detail</h1>
+
+<p>{{ investment.name }}</p>
+<p>{{ investment.amount }}</p>
+<p>{{ investment.description }}</p>
+
+<a href="{% url 'update_investment' investment.id %}">Edit</a>
+<a href="{% url 'delete_investment' investment.id %}">Delete</a>
+
+<form action="{% url 'add_prediction' investment.id %}" method="POST">
+    {% csrf_token %}
+    {{ prediction_form.as_p }}
+    <input type="submit" class="btn" value="Add Prediction">
+</form>
+
+{% if investment.has_sources %}
+    {% for source in investment.sources.all %}
+    <div>
+        <a href="{% url 'source_detail' source.id %}">{{source.name}}</a>
+        <form action="{% url 'unassoc_source' investment.id source.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn">Remove</button>
+        </form>
+    </div>
+    {% endfor %}
+    </hr>
+{% endif %}
+
+{% for source in sources %}
+    <a>Add {{source.name}}</a>
+    <form action="{% url 'assoc_source' investment.id source.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn">Add</button>
+    </form>
+{% endfor %}
+{% endblock %}

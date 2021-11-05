@@ -1,0 +1,13 @@
+body {
+    width: 50vw;
+    min-height: 100vh;
+    margin: 0 auto
+}
+
+nav {
+    margin-top: 5em
+}
+
+.container {
+    margin: 2em auto
+}

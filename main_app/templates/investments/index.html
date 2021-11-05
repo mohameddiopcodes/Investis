@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Index Investments</h1>
+
+{% for investment in investments %}
+    <a href="{% url 'detail' investment.id%}">{{ investment.name }}</a>
+{% endfor %}
+{% endblock %}
