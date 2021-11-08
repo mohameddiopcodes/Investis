@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
-from .models import Investment, Source
+from .models import Investment, Source, Prediction
 
 from .forms import PredictionForm
 
@@ -42,6 +42,12 @@ def add_prediction(request, id):
     prediction.investment_id = id
     prediction.save()
   return redirect('detail', id=id)
+
+def remove_prediction(request, prediction_id):
+  prediction = Prediction.objects.get(id=prediction_id)
+  investment_id = prediction.investment.id
+  prediction.delete()
+  return redirect('detail', id=investment_id)
 
 class SourceList(ListView):
   model = Source

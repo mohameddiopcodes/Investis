@@ -1,6 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
-<h1>Home</h1>
-
+<div class='home-thumbnail'>
+    <div>
+        <p>Record all your investments</p>
+        <a class='home-btn' href="{% url 'create_investment' %}">Get started</a>
+    </div>
+    <img id='home-img' src="{% static 'images/coin.jpeg' %}"/>
+    <div class='overlay'></div>
+</div>
+<h2>Discover popular assets</h2>
+<div class='home-assets'>
+    <div>
+        <img src={% static 'images/bitcoin2.jpeg' %} />
+        <div class='overlay'></div>
+    </div>
+    <div>
+        <img src={% static 'images/ethereum.jpeg' %} />
+        <div class='overlay'></div>
+    </div>
+    <div>
+        <img src={% static 'images/dogecoin.jpeg' %} />
+        <div class='overlay'></div>
+    </div>
+</div>
 {% endblock %}

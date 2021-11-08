@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Source Detail</h1>
+<h1 class='investment-name'>{{ source.name }}
+</h1>
+<div class='investment-detail'>
+    <p>{{ source.amount }}</p>
+    <p>Price: {{ source.payment_method }}</p>
+</div>
 
-<p>{{ source.name }}</p>
-
-<a href="{% url 'update_source' source.id %}">Edit</a>
-<a href="{% url 'delete_source' source.id %}">Delete</a>
+<div class='detail-links'>
+    <a class='detail-link' href="{% url 'update_source' source.id %}">Edit</a>
+    <a class='detail-link' href="{% url 'delete_source' source.id %}">Delete</a>
+</div>
 
 {% endblock %}

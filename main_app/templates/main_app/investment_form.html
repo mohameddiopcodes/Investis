@@ -2,18 +2,18 @@
 
 {% block content %}
 
-{% if object %}
-  <h1>Edit <span>{{object.name}}</span></h1>
-{% else %}
-  <h1>Add Investment</h1>
-{% endif %}
-
-<form action="" method="POST">
+<form action="" method="POST" autocomplete='off'>
+  {% if object %}
+    <a class='back' href="{% url 'detail' investment.id %}">back</a>
+    <h2>Edit {{object.name}}</h2>
+  {% else %}
+    <h1>Add Investment</h1>
+  {% endif %}
   {% csrf_token %}
   <table>
     {{ form.as_table }}
   </table>
-  <input type="submit" value="Submit!" class="btn">
+  <input type="submit" value="SUBMIT" class="btn">
 </form>
 
 {% endblock %}

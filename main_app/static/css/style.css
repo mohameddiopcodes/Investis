@@ -1,13 +1,317 @@
 body {
-    width: 50vw;
+    width: 40vw;
     min-height: 100vh;
-    margin: 0 auto
-}
-
-nav {
-    margin-top: 5em
+    margin: 0 auto;
 }
 
 .container {
     margin: 2em auto
+}
+
+nav {
+    margin-top: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex
+}
+
+nav ul li {
+    margin: 0 1em
+}
+
+nav a {
+    text-decoration: none;
+    color: #000
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #777
+}
+
+.home-thumbnail {
+    position: relative
+}
+
+.home-thumbnail div:not(.overlay) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    text-align: center;
+    margin: 30% 0;
+}
+
+.home-thumbnail div p {
+    font-size: 2em;
+    color: #fefefe;
+    margin-bottom: 2em
+}
+
+.home-thumbnail div a {
+    background: #111;
+    color: #fff;
+    padding: 1em 2em;
+    font-size: 1.2em;
+    border-radius: 8px;
+    text-decoration: none;
+    pointer-events: pointer;
+}
+
+.home-thumbnail div a:hover {
+    background: #fff;
+    color: #000
+}
+
+#home-img {
+    position: relative;
+    width: 100%
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(100, 100, 100, .2);
+}
+
+.home-assets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-assets div:not(.overlay) {
+    position: relative;
+    width: 30%;
+}
+
+.home-assets img {
+    width: 100%
+}
+
+form {
+    margin: 5em 10% 0 0
+}
+
+form h1 {
+    margin: 2em 0
+}
+
+form input[type=submit] {
+    padding: 1em 2em;
+    border: 0;
+    background:rgb(48, 145, 186);
+    border-radius: 5px;
+    color: #fff;
+    margin: 0 auto
+}
+
+form input[type=submit]:hover {
+    background:rgb(16, 118, 162);
+}
+
+table {
+    margin: 0; 
+    width: 100%
+}
+
+tr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2em
+}
+
+tr:last-child {
+    margin: 2em 0;
+}
+
+th {
+    margin-bottom: .5em;
+}
+
+tr input, tr textarea, td {
+    width: 100%
+}
+
+tr input {
+    height: 3em;
+    border: 0;
+    border-bottom: 2px solid #111;
+}
+
+select {
+    border: 0;
+    height: 3em
+}
+
+tr textarea {
+    height: 20em;
+    border: 2px solid #111;
+}
+
+tr input:focus, tr textarea:focus {
+    outline: none;
+    border-bottom: 4px solid #111;
+}
+
+select:focus {
+    outline: none
+}
+
+.card-container {
+    display: flex;
+}
+
+.card {
+    border: 2px solid black;
+    padding: 3em;
+    margin: 1em;
+    width: 30%;
+    background: black;
+    border-radius: 5px;
+    display: flex;
+    position: relative
+}
+
+.card a:not(.card-action-link) {
+    color: white;
+    text-decoration: none;
+}
+
+.card-action {
+    background: #fff;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    right: 0;
+    top: 0;
+    bottom: 0
+}
+
+.card-action-link {
+    position: inline-block;
+    margin: .5em;
+    pointer-events: pointer;
+    color: #555
+}
+
+.card-action-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.investment-name {
+    background: linear-gradient(90deg, rgba(255,218,59,1) 0%, rgba(255,179,118,1) 77%);
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 3em;
+}
+
+.investment-detail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.investment-name p {
+    font-size: 1em
+}
+
+.detail-links {
+    display: flex;
+    justify-content: center;
+}
+
+.detail-link {
+    text-decoration: none;
+    position: inline-block;
+    margin: 2em;
+    background: #000;
+    opacity: .8;
+    padding: 1em;
+    width: 4em;
+    border-radius: 6px;
+    text-align: center;
+    color: #fff
+}
+
+.detail-link:hover {
+    opacity: 1;
+}
+
+.detail-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.detail-form {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-form p {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.detail-form label {
+    margin-bottom: .5em;
+}
+
+.detail-form input[type=submit] {
+    margin: 2em auto;
+
+}
+
+.detail-form input:not(input[type=submit]) {
+    border: 0;
+    padding: 1em;
+    width: 100%;
+    border-bottom: 2px solid #000
+}
+
+.placeholder-text {
+    margin-left: .5em
+}
+
+.back {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding:  0 0 2em 0
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+footer {
+    /* position: absolute; */
+    /* bottom: 5em;
+    right: 0;
+    left: 0; */
+    align-self: flex-end;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+
 }

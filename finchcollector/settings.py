@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-from dotenv import dotenv_values
-config = dotenv_values(".env")
+import os
 
 from pathlib import Path
 
@@ -80,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'finchcollector',
-        'PASSWORD': config['POSTGRES_PASSWORD']
+        'PASSWORD': os.environ['POSTGRES_PASSWORD']
     }
 }
 
